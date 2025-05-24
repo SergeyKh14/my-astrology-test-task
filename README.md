@@ -10,9 +10,7 @@ A modern starter project built with:
 
 ---
 
-## 🚀 Getting Started
-
-### 1. Clone the repository
+## 🚀 Getting Started\
 
 ```bash
 git clone https://github.com/your-username/your-repo.git
