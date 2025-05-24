@@ -13,8 +13,8 @@ A modern starter project built with:
 ## 🚀 Getting Started\
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/SergeyKh14/my-astrology-test-task.git
+cd my-astrology-test-task
 ```
 
 ```bash
