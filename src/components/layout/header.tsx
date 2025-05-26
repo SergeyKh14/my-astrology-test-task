@@ -2,6 +2,7 @@ import Image from "next/image";
 import { P } from "../ui/typography";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import Credits from "./components/Credits";
 
 const links = [
   {
@@ -46,13 +47,7 @@ export default function Header() {
       </div>
       <div className="flex gap-4 items-center">
         <div className="flex items-center h-[68px] bg-white/5 pl-5 pr-2 rounded-full gap-2">
-          <div className="flex items-center gap-2">
-            <P className="text-text-accent" weight="bold">
-              500
-            </P>
-            <P className="text-white">credits</P>
-            <Image alt="" src="/images/icons/coin.svg" width={20} height={20} />
-          </div>
+          <Credits />
           <Button
             variant="link"
             className="flex items-center gap-2 hover:no-underline"

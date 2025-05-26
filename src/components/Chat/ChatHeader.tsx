@@ -2,8 +2,19 @@ import Image from "next/image";
 import { P, Span } from "../ui/typography";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
+import { useChat } from "@/context/ChatContext";
+import { cn, formatTime } from "@/lib/utils";
 
 export default function ChatHeader() {
+  const {
+    credits,
+    elapsedSeconds,
+    isSessionStopped,
+    minsLeft,
+    startTimer,
+    stopTimer,
+  } = useChat();
+
   return (
     <div className="hidden md:flex items-start justify-between pb-4 border-b border-white/10">
       <div className="flex items-center gap-4">
@@ -29,7 +40,7 @@ export default function ChatHeader() {
           </div>
           <div className="flex items-center gap-2">
             <P weight="bold" className="text-accent">
-              30
+              {credits}
             </P>
             <P size="xxs" className="text-text-secondary">
               credits/minute
@@ -40,7 +51,7 @@ export default function ChatHeader() {
       <div className="flex flex-col gap-2 items-end">
         <div className="flex gap-2">
           <P className="text-white" weight="thin" size="4xl">
-            00:15
+            {formatTime(elapsedSeconds)}
           </P>
           <div className="flex items-end">
             <P className="text-text-secondary leading-4">min</P>
@@ -58,19 +69,36 @@ export default function ChatHeader() {
             </div>
             <P className="text-text-secondary">
               <Span weight="bold" className="text-white">
-                3 min{" "}
+                {minsLeft} min{" "}
               </Span>
               left
             </P>
           </div>
-          <Button className="px-5 py-[10px] gap-3 h-auto rounded-full bg-white/5 hover:bg-white/10">
-            <Image
-              width={12}
-              height={12}
-              alt="stop"
-              src="/images/icons/stop.svg"
-            />
-            <P>Stop chat</P>
+          <Button
+            onClick={() => (isSessionStopped ? startTimer() : stopTimer())}
+            className={cn(
+              "px-5 py-[10px] gap-3 h-auto rounded-full",
+              isSessionStopped
+                ? "bg-primary text-white"
+                : "bg-white/5 hover:bg-white/10"
+            )}
+          >
+            {isSessionStopped ? (
+              <Image
+                width={20}
+                height={20}
+                alt="stop"
+                src="/images/icons/play.svg"
+              />
+            ) : (
+              <Image
+                width={12}
+                height={12}
+                alt="stop"
+                src="/images/icons/stop.svg"
+              />
+            )}
+            <P>{isSessionStopped ? "Continue" : "Stop chat"}</P>
           </Button>
         </div>
       </div>

@@ -34,9 +34,12 @@
       --neutral: 229, 9%, 63%;
       --text-accent: 264 68% 67%;
       --text-treatry: 229, 10%, 45%;
+      --text-warning: 327, 73%, 74%;
       --purple: 264 32% 34%;
       --surface-navy: 228 56% 13%;
       --text-secondary: 230 30% 85%;
+      --text-gold: 39, 66%, 89%;
+      --border-gold: 39, 32%, 59%;
 
       --radius: 0.5rem;
     }

@@ -1,5 +1,7 @@
 import Chat from "@/components/Chat";
+import ChatCredits from "@/components/Chat/ChatCredits";
 import ChatHeaderMobile from "@/components/Chat/ChatHeaderMobile";
+import AddCredits from "@/components/modals/add-credits";
 import { H4, P } from "@/components/ui/typography";
 
 export default function Home() {
@@ -11,22 +13,12 @@ export default function Home() {
         </H4>
         <div>
           <P className="text-text-secondary text-right">In your account now</P>
-          <div className="flex justify-end gap-2">
-            <P
-              size="2xl"
-              weight="bold"
-              className="text-text-accent font-montserrat"
-            >
-              550
-            </P>
-            <P size="lg" className="text-white">
-              credits
-            </P>
-          </div>
+          <ChatCredits />
         </div>
       </div>
       <ChatHeaderMobile />
       <Chat />
+      <AddCredits />
     </div>
   );
 }

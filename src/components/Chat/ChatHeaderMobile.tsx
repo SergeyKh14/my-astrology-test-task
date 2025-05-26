@@ -1,5 +1,6 @@
 import { P } from "../ui/typography";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import ChatCredits from "./ChatCredits";
 
 export default function ChatHeaderMobile() {
   return (
@@ -26,17 +27,7 @@ export default function ChatHeaderMobile() {
         <P size="xxs" className="text-text-secondary text-right leading-none">
           In your account now
         </P>
-        <div className="flex justify-end gap-2">
-          <P
-            weight="bold"
-            className="text-text-accent font-montserrat leading-none"
-          >
-            550
-          </P>
-          <P size="xs" className="text-white leading-none">
-            credits
-          </P>
-        </div>
+        <ChatCredits />
       </div>
     </div>
   );

@@ -1,8 +1,16 @@
 "use client";
 
 import { PropsWithChildren } from "react";
-import { MessagesProvider } from "./MessagesContext";
+import { ChatProvider } from "./ChatContext";
+import { UserProvider } from "./UserContext";
+import { ModalProvider } from "./ModalContext";
 
 export function Providers({ children }: PropsWithChildren) {
-  return <MessagesProvider>{children}</MessagesProvider>;
+  return (
+    <ModalProvider>
+      <UserProvider>
+        <ChatProvider>{children}</ChatProvider>
+      </UserProvider>
+    </ModalProvider>
+  );
 }

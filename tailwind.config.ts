@@ -61,6 +61,9 @@ export default {
         "surface-navy": "hsl(var(--surface-navy))",
         "text-secondary": "hsl(var(--text-secondary))",
         "text-treatry": "hsl(var(--text-treatry))",
+        "text-warning": "hsl(var(--text-warning))",
+        "text-gold": "hsl(var(--text-gold))",
+        "border-gold": "hsl(var(--border-gold))",
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -1,6 +1,6 @@
 "use client";
 import ChatHeader from "./ChatHeader";
-import { useMessages } from "@/context/MessagesContext";
+import { useChat } from "@/context/ChatContext";
 import UserInfo from "./UserInfo";
 import Message from "./Message";
 import { cn } from "@/lib/utils";
@@ -9,7 +9,7 @@ import { useRef } from "react";
 
 export default function Chat() {
   const lastElRef = useRef<HTMLDivElement>(null);
-  const { groupedMessages } = useMessages();
+  const { groupedMessages } = useChat();
 
   const scrollDown = () => {
     setTimeout(() => {
