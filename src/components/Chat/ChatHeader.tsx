@@ -51,10 +51,12 @@ export default function ChatHeader() {
       <div className="flex flex-col gap-2 items-end">
         <div className="flex gap-2">
           <P className="text-white" weight="thin" size="4xl">
-            {formatTime(elapsedSeconds)}
+            {elapsedSeconds > 59 ? "XX:XX" : formatTime(elapsedSeconds)}
           </P>
           <div className="flex items-end">
-            <P className="text-text-secondary leading-4">min</P>
+            <P className="text-text-secondary leading-none">
+              {elapsedSeconds > 59 ? "mins" : "secs"}
+            </P>
           </div>
         </div>
         <div className="flex items-center gap-4">

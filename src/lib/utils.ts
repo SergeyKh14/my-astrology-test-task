@@ -72,10 +72,14 @@ export function getInitials(name: string): string {
     .join("");
 }
 
-export function formatTime(seconds: number) {
-  const mins = Math.floor(seconds / 60)
+export function formatTime(seconds: number, showHours?: boolean) {
+  const hours = Math.floor(seconds / 3600)
+    .toString()
+    .padStart(2, "0");
+  const mins = Math.floor((seconds % 3600) / 60)
     .toString()
     .padStart(2, "0");
   const secs = (seconds % 60).toString().padStart(2, "0");
-  return `${mins}:${secs}`;
+
+  return showHours ? `${hours}:${mins}` : `${mins}:${secs}`;
 }
